@@ -41,6 +41,12 @@
         <data android:scheme="smsto"/>
     </intent>
     </queries>
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.DIAL" />
+            <data android:scheme="tel"/>
+        </intent>
+    </queries>
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.SEND_SMS" />
 </manifest>
