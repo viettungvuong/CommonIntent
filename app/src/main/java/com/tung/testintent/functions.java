@@ -137,6 +137,18 @@ public class functions {
                     newBtn.setIcon(AppCompatResources.getDrawable(context, R.drawable.bluetooth));
                     break;
                 }
+                case 2:{
+                    intent= new Intent(Settings.ACTION_DATE_SETTINGS);
+                    newBtn.setText("Date");
+                    newBtn.setIcon(AppCompatResources.getDrawable(context, R.drawable.date));
+                    break;
+                }
+                default:{
+                    intent= new Intent(Settings.ACTION_SETTINGS);
+                    newBtn.setText("General settings");
+                    newBtn.setIcon(AppCompatResources.getDrawable(context, R.drawable.settings));
+                    break;
+                }
             }
         }
     }
