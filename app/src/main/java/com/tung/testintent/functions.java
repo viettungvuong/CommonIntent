@@ -116,11 +116,14 @@ public class functions {
     }
 
     void createSettingsButton(Context context){
+        LinearLayout.LayoutParams params=new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.WRAP_CONTENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+        );
         for (int i=0; i<4; i++){
             MaterialButton newBtn=new MaterialButton(context);
             newBtn.setBackgroundColor(Color.MAGENTA);
 
-            View.OnClickListener onClickListener;
             Intent intent;
 
             switch (i){
@@ -150,6 +153,12 @@ public class functions {
                     break;
                 }
             }
+            newBtn.setLayoutParams(params);
+            newBtn.setOnClickListener(
+                    v->{
+                        context.startActivity(intent);
+                    }
+            );
         }
     }
 
