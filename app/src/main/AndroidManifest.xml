@@ -43,6 +43,12 @@
 
         </activity>
     </application>
+    <queries>
+    <intent>
+        <action android:name="android.intent.action.SENDTO" />
+        <data android:scheme="smsto"/>
+    </intent>
+    </queries>
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.SEND_SMS" />
 </manifest>

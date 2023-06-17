@@ -25,8 +25,8 @@ public class functions {
     private static String phoneNumber;
     private static String content;
     public static Intent sendMessage(String content) {
-        Intent intent = new Intent(Intent.ACTION_SEND);
-        intent.setData(Uri.parse("sms:"));  // Only SMS apps respond to this.
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setData(Uri.parse("smsto:")); // Only SMS apps respond to this.
         intent.putExtra("sms_body", content);
         return intent;
     }
