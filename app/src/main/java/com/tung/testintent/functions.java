@@ -2,18 +2,24 @@ package com.tung.testintent;
 
 import static java.net.Proxy.Type.HTTP;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.content.res.AppCompatResources;
+
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.provider.CalendarContract;
 import android.provider.Settings;
 import android.text.Editable;
 import android.text.InputType;
 import android.text.TextWatcher;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+
+import com.google.android.material.button.MaterialButton;
 
 public class functions {
     private static String phoneNumber;
@@ -107,6 +113,32 @@ public class functions {
         layoutParams.setMargins(50,50,50,50);
         newBtn.setLayoutParams(layoutParams);
         return newBtn;
+    }
+
+    void createSettingsButton(Context context){
+        for (int i=0; i<4; i++){
+            MaterialButton newBtn=new MaterialButton(context);
+            newBtn.setBackgroundColor(Color.MAGENTA);
+
+            View.OnClickListener onClickListener;
+            Intent intent;
+
+            switch (i){
+                case 0:
+                {
+                    intent= new Intent(Settings.ACTION_WIFI_SETTINGS);
+                    newBtn.setText("Wifi");
+                    newBtn.setIcon(AppCompatResources.getDrawable(context, R.drawable.wifi));
+                    break;
+                }
+                case 1:{
+                    intent= new Intent(Settings.ACTION_BLUETOOTH_SETTINGS);
+                    newBtn.setText("Bluetooth");
+                    newBtn.setIcon(AppCompatResources.getDrawable(context, R.drawable.bluetooth));
+                    break;
+                }
+            }
+        }
     }
 
 }
