@@ -115,7 +115,8 @@ public class functions {
         return newBtn;
     }
 
-    void createSettingsButton(Context context){
+    public static void createSettingsButtons(Context context, LinearLayout widgets){
+        widgets.removeAllViews();
         LinearLayout.LayoutParams params=new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.WRAP_CONTENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT
@@ -159,6 +160,7 @@ public class functions {
                         context.startActivity(intent);
                     }
             );
+            widgets.addView(newBtn);
         }
     }
 

@@ -42,10 +42,7 @@ public class MainActivity extends AppCompatActivity {
         Button btnWeb=findViewById(R.id.webButton);
         btnWeb.setOnClickListener(
                 v->{
-                    Intent intent=functions.wifi();
-                    if (intent.resolveActivity(getPackageManager()) != null) {
-                        startActivity(intent);
-                    }
+                    functions.createSettingsButtons(this,widgets);
                 }
         );
 
