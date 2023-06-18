@@ -37,6 +37,8 @@ public class functions {
         Intent intent = new Intent(Intent.ACTION_DIAL);
         intent.setData(Uri.parse("tel:" + phoneNumber));
         return intent;
+
+
     }
 
     public static Intent wifi(){
